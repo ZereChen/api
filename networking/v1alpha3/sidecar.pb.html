@@ -50,8 +50,8 @@ sidecars in all namespaces to allow egress traffic only to other
 workloads in the same namespace as well as to services in the
 <code>istio-system</code> namespace.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: Sidecar
@@ -65,9 +65,9 @@ spec:
     - &quot;istio-system/*&quot;
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: Sidecar
@@ -81,8 +81,8 @@ spec:
     - &quot;istio-system/*&quot;
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>The example below declares a <code>Sidecar</code> configuration in the
 <code>prod-us1</code> namespace that overrides the global default defined
@@ -90,8 +90,8 @@ above, and configures the sidecars in the namespace to allow egress
 traffic to public services in the <code>prod-us1</code>, <code>prod-apis</code>, and the
 <code>istio-system</code> namespaces.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: Sidecar
@@ -106,9 +106,9 @@ spec:
     - &quot;istio-system/*&quot;
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: Sidecar
@@ -123,8 +123,8 @@ spec:
     - &quot;istio-system/*&quot;
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>The following example declares a <code>Sidecar</code> configuration in the
 <code>prod-us1</code> namespace for all pods with labels <code>app: ratings</code>
@@ -142,8 +142,8 @@ the egress direction, in addition to the <code>istio-system</code> namespace,
 the sidecar proxies only HTTP traffic bound for port 9080 for
 services in the <code>prod-us1</code> namespace.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: Sidecar
@@ -180,9 +180,9 @@ spec:
     - &quot;istio-system/*&quot;
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: Sidecar
@@ -219,8 +219,8 @@ spec:
     - &quot;istio-system/*&quot;
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>and the associated PeerAuthentication security policy to ensure
 that mutual TLS based authentication is not configured for ports
@@ -246,8 +246,8 @@ spec:
 <p>and the associated DestinationRule to ensure that the clients use
 the appropriate TLS settings:</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -269,9 +269,9 @@ spec:
        caCertificates: /etc/certs/ca-certs.pem
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -293,8 +293,8 @@ spec:
        caCertificates: /etc/certs/ca-certs.pem
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>If the workload is deployed without IPTables-based traffic capture,
 the <code>Sidecar</code> configuration is the only way to configure the ports
@@ -311,8 +311,8 @@ the application to communicate with a backing MySQL database on
 <code>127.0.0.1:3306</code>, that then gets proxied to the externally hosted
 MySQL service at <code>mysql.foo.com:3306</code>.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: Sidecar
@@ -341,9 +341,9 @@ spec:
     - &quot;*/mysql.foo.com&quot;
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: Sidecar
@@ -372,13 +372,13 @@ spec:
     - &quot;*/mysql.foo.com&quot;
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>And the associated service entry for routing to <code>mysql.foo.com:3306</code></p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
@@ -396,9 +396,9 @@ spec:
   resolution: DNS
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: ServiceEntry
@@ -416,8 +416,8 @@ spec:
   resolution: DNS
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>It is also possible to mix and match traffic capture modes in a single
 proxy. For example, consider a setup where internal services are on the
@@ -432,8 +432,8 @@ listener on <code>172.16.1.32:80</code> (the VM&rsquo;s IP) for traffic arriving
 proxy in the VM should contain <code>REDIRECT</code> or <code>TPROXY</code> as its value,
 implying that IP tables based traffic capture is active.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: Sidecar
@@ -462,9 +462,9 @@ spec:
     - &quot;*/*&quot;
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: Sidecar
@@ -493,8 +493,8 @@ spec:
     - &quot;*/*&quot;
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <h2 id="CaptureMode">CaptureMode</h2>
 <section>

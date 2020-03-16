@@ -1,0 +1,58 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "",
+    "version": "v1alpha3"
+  },
+  "components": {
+    "schemas": {
+      "istio.networking.v1alpha3.KafkaConfig": {
+        "type": "object",
+        "properties": {
+          "brokers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "string"
+            }
+          },
+          "topic": {
+            "type": "string",
+            "format": "string"
+          }
+        }
+      },
+      "istio.networking.v1alpha3.YXAdapter": {
+        "type": "object",
+        "properties": {
+          "samplePercent": {
+            "$ref": "#/components/schemas/istio.policy.v1beta1.FractionalPercent"
+          },
+          "kafkaTracer": {
+            "$ref": "#/components/schemas/istio.networking.v1alpha3.KafkaConfig"
+          }
+        }
+      },
+      "istio.policy.v1beta1.FractionalPercent": {
+        "type": "object",
+        "properties": {
+          "numerator": {
+            "description": "Specifies the numerator. Defaults to 0.",
+            "type": "integer"
+          },
+          "denominator": {
+            "$ref": "#/components/schemas/istio.policy.v1beta1.FractionalPercent.DenominatorType"
+          }
+        }
+      },
+      "istio.policy.v1beta1.FractionalPercent.DenominatorType": {
+        "description": "Specifies the denominator. If the denominator specified is less than the numerator, the final fractional percentage is capped at 1 (100%).",
+        "type": "string",
+        "enum": [
+          "HUNDRED",
+          "TEN_THOUSAND"
+        ]
+      }
+    }
+  }
+}

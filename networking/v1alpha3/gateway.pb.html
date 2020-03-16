@@ -21,8 +21,8 @@ my-gateway-controller</code>. While Istio will configure the proxy to listen
 on these ports, it is the responsibility of the user to ensure that
 external traffic to these ports are allowed into the mesh.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
@@ -76,9 +76,9 @@ spec:
     - &quot;*&quot;
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: Gateway
@@ -132,8 +132,8 @@ spec:
     - &quot;*&quot;
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>The Gateway specification above describes the L4-L6 properties of a load
 balancer. A <code>VirtualService</code> can then be bound to a gateway to control
@@ -150,8 +150,8 @@ requests to the &ldquo;reviews.prod.svc.cluster.local&rdquo; service. This rule 
 applicable across ports 443, 9080. Note that <code>http://uk.bookinfo.com</code>
 gets redirected to <code>https://uk.bookinfo.com</code> (i.e. 80 redirects to 443).</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -190,9 +190,9 @@ spec:
       weight: 20
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
@@ -231,16 +231,16 @@ spec:
       weight: 20
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>The following VirtualService forwards traffic arriving at (external)
 port 27017 to internal Mongo server on port 5555. This rule is not
 applicable internally in the mesh as the gateway list omits the
 reserved name <code>mesh</code>.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -263,9 +263,9 @@ spec:
           number: 5555
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
@@ -288,8 +288,8 @@ spec:
           number: 5555
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>It is possible to restrict the set of virtual services that can bind to
 a gateway server using the namespace/hostname syntax in the hosts field.
@@ -297,8 +297,8 @@ For example, the following Gateway allows any virtual service in the ns1
 namespace to bind to it, while restricting only the virtual service with
 foo.bar.com host in the ns2 namespace to bind to it.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
@@ -318,9 +318,9 @@ spec:
     - &quot;ns2/foo.bar.com&quot;
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: Gateway
@@ -340,8 +340,8 @@ spec:
     - &quot;ns2/foo.bar.com&quot;
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <h2 id="Gateway">Gateway</h2>
 <section>
@@ -445,8 +445,8 @@ No
 <p><code>Server</code> describes the properties of the proxy on a given load balancer
 port. For example,</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
@@ -464,9 +464,9 @@ spec:
     - &quot;*&quot;
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: Gateway
@@ -484,13 +484,13 @@ spec:
     - &quot;*&quot;
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>Another example</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
@@ -508,9 +508,9 @@ spec:
     - &quot;*&quot;
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: Gateway
@@ -528,13 +528,13 @@ spec:
     - &quot;*&quot;
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>The following is an example of TLS configuration for port 443</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
@@ -556,9 +556,9 @@ spec:
       privateKey: /etc/certs/privatekey.pem
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: Gateway
@@ -580,8 +580,8 @@ spec:
       privateKey: /etc/certs/privatekey.pem
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <table class="message-fields">
 <thead>

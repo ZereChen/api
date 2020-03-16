@@ -15,8 +15,8 @@ detection settings to detect and evict unhealthy hosts from the load
 balancing pool. For example, a simple load balancing policy for the
 ratings service would look as follows:</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -29,9 +29,9 @@ spec:
       simple: LEAST_CONN
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -44,8 +44,8 @@ spec:
       simple: LEAST_CONN
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>Version specific policies can be specified by defining a named
 <code>subset</code> and overriding the settings specified at the service level. The
@@ -53,8 +53,8 @@ following rule uses a round robin load balancing policy for all traffic
 going to a subset named testversion that is composed of endpoints (e.g.,
 pods) with labels (version:v3).</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -74,9 +74,9 @@ spec:
         simple: ROUND_ROBIN
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -96,8 +96,8 @@ spec:
         simple: ROUND_ROBIN
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p><strong>Note:</strong> Policies specified for subsets will not take effect until
 a route rule explicitly sends traffic to this subset.</p>
@@ -107,8 +107,8 @@ following rule uses the least connection load balancing policy for all
 traffic to port 80, while uses a round robin load balancing setting for
 traffic to the port 9080.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -128,9 +128,9 @@ spec:
         simple: ROUND_ROBIN
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -150,8 +150,8 @@ spec:
         simple: ROUND_ROBIN
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <h2 id="ConnectionPoolSettings">ConnectionPoolSettings</h2>
 <section>
@@ -164,8 +164,8 @@ level as well as at HTTP level.</p>
 <p>For example, the following rule sets a limit of 100 connections to redis
 service called myredissrv with a connect timeout of 30ms</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -183,9 +183,9 @@ spec:
           interval: 75s
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -203,8 +203,8 @@ spec:
           interval: 75s
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <table class="message-fields">
 <thead>
@@ -578,8 +578,8 @@ for more details.</p>
 <p>For example, the following rule uses a round robin load balancing policy
 for all traffic going to the ratings service.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -592,9 +592,9 @@ spec:
       simple: ROUND_ROBIN
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -607,15 +607,15 @@ spec:
       simple: ROUND_ROBIN
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>The following example sets up sticky sessions for the ratings service
 hashing-based load balancer for the same ratings service using the
 the User cookie as the hash key.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml"> apiVersion: networking.istio.io/v1alpha3
  kind: DestinationRule
@@ -631,9 +631,9 @@ the User cookie as the hash key.</p>
            ttl: 0s
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml"> apiVersion: networking.istio.io/v1beta1
  kind: DestinationRule
@@ -649,8 +649,8 @@ the User cookie as the hash key.</p>
            ttl: 0s
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <table class="message-fields">
 <thead>
@@ -885,7 +885,7 @@ Envoy for further details.</p>
 distribution of traffic to endpoints based on the localities of where the
 traffic originates and where it will terminate. These localities are
 specified using arbitrary labels that designate a hierarchy of localities in
-{region}/{zone}/{sub-zone} form. For additional detail refer to
+&lbrace;region}/&lbrace;zone}/&lbrace;sub-zone} form. For additional detail refer to
 <a href="https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/load_balancing/locality_weight">Locality Weight</a>
 The following example shows how to setup locality weights mesh-wide.</p>
 
@@ -985,7 +985,7 @@ No
 <section>
 <p>Describes how traffic originating in the &lsquo;from&rsquo; zone or sub-zone is
 distributed over a set of &lsquo;to&rsquo; zones. Syntax for specifying a zone is
-{region}/{zone}/{sub-zone} and terminal wildcards are allowed on any
+&lbrace;region}/&lbrace;zone}/&lbrace;sub-zone} and terminal wildcards are allowed on any
 segment of the specification. Examples:
 * - matches all localities
 us-west/* - all zones and sub-zones within the us-west region
@@ -1092,8 +1092,8 @@ it sets a limit of 1000 concurrent HTTP2 requests and configures upstream
 hosts to be scanned every 5 mins so that any host that fails 7 consecutive
 times with a 502, 503, or 504 error code will be ejected for 15 minutes.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -1114,9 +1114,9 @@ spec:
       baseEjectionTime: 15m
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -1137,8 +1137,8 @@ spec:
       baseEjectionTime: 15m
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <table class="message-fields">
 <thead>
@@ -1265,8 +1265,8 @@ uses a round robin load balancing policy for all traffic going to a
 subset named testversion that is composed of endpoints (e.g., pods) with
 labels (version:v3).</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -1286,9 +1286,9 @@ spec:
         simple: ROUND_ROBIN
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -1308,8 +1308,8 @@ spec:
         simple: ROUND_ROBIN
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p><strong>Note:</strong> Policies specified for subsets will not take effect until
 a route rule explicitly sends traffic to this subset.</p>
@@ -1380,8 +1380,8 @@ for more details. These settings are common to both HTTP and TCP upstreams.</p>
 <p>For example, the following rule configures a client to use mutual TLS
 for connections to upstream database cluster.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -1397,9 +1397,9 @@ spec:
       caCertificates: /etc/certs/rootcacerts.pem
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -1415,14 +1415,14 @@ spec:
       caCertificates: /etc/certs/rootcacerts.pem
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>The following rule configures a client to use TLS when talking to a
 foreign service whose domain matches *.foo.com.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -1435,9 +1435,9 @@ spec:
       mode: SIMPLE
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -1450,14 +1450,14 @@ spec:
       mode: SIMPLE
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>The following rule configures a client to use Istio mutual TLS when talking
 to rating services.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -1470,9 +1470,9 @@ spec:
       mode: ISTIO_MUTUAL
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -1485,8 +1485,8 @@ spec:
       mode: ISTIO_MUTUAL
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <table class="message-fields">
 <thead>

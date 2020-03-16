@@ -20,8 +20,8 @@ service registry (e.g., a set of VMs talking to services in Kubernetes).</p>
 applications over HTTPS. The sidecar inspects the SNI value in the
 ClientHello message to route to the appropriate external service.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
@@ -40,9 +40,9 @@ spec:
   resolution: DNS
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: ServiceEntry
@@ -61,16 +61,16 @@ spec:
   resolution: DNS
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>The following configuration adds a set of MongoDB instances running on
 unmanaged VMs to Istio&rsquo;s registry, so that these services can be treated
 as any other service in the mesh. The associated DestinationRule is used
 to initiate mTLS connections to the database instances.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
@@ -92,9 +92,9 @@ spec:
   - address: 3.3.3.3
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: ServiceEntry
@@ -116,13 +116,13 @@ spec:
   - address: 3.3.3.3
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>and the associated DestinationRule</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -138,9 +138,9 @@ spec:
       caCertificates: /etc/certs/rootcacerts.pem
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -156,15 +156,15 @@ spec:
       caCertificates: /etc/certs/rootcacerts.pem
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>The following example uses a combination of service entry and TLS
 routing in a virtual service to steer traffic based on the SNI value to
 an internal egress firewall.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
@@ -182,9 +182,9 @@ spec:
   resolution: NONE
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: ServiceEntry
@@ -202,13 +202,13 @@ spec:
   resolution: NONE
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>And the associated VirtualService to route based on the SNI value.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -228,9 +228,9 @@ spec:
         host: internal-egress-firewall.ns1.svc.cluster.local
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
@@ -250,8 +250,8 @@ spec:
         host: internal-egress-firewall.ns1.svc.cluster.local
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>The virtual service with TLS match serves to override the default SNI
 match. In the absence of a virtual service, traffic will be forwarded to
@@ -265,8 +265,8 @@ to all namespaces. The following example restricts the visibility to the
 current namespace, represented by &ldquo;.&rdquo;, so that it cannot be used by other
 namespaces.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
@@ -286,9 +286,9 @@ spec:
   resolution: DNS
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: ServiceEntry
@@ -308,13 +308,13 @@ spec:
   resolution: DNS
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>Define a gateway to handle all egress traffic.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
@@ -333,9 +333,9 @@ spec:
    - &quot;*&quot;
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: Gateway
@@ -354,8 +354,8 @@ spec:
    - &quot;*&quot;
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>And the associated <code>VirtualService</code> to route from the sidecar to the
 gateway service (<code>istio-egressgateway.istio-system.svc.cluster.local</code>), as
@@ -364,8 +364,8 @@ virtual service is exported to all namespaces enabling them to route traffic
 through the gateway to the external service. Forcing traffic to go through
 a managed middle proxy like this is a common practice.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -397,9 +397,9 @@ spec:
         host: httpbin.com
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
@@ -431,16 +431,16 @@ spec:
         host: httpbin.com
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>The following example demonstrates the use of wildcards in the hosts for
 external services. If the connection has to be routed to the IP address
 requested by the application (i.e. application resolves DNS and attempts
 to connect to a specific IP), the discovery mode must be set to <code>NONE</code>.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
@@ -457,9 +457,9 @@ spec:
   resolution: NONE
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: ServiceEntry
@@ -476,15 +476,15 @@ spec:
   resolution: NONE
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>The following example demonstrates a service that is available via a
 Unix Domain Socket on the host of the client. The resolution must be
 set to STATIC to use Unix address endpoints.</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
@@ -503,9 +503,9 @@ spec:
   - address: unix:///var/run/example/socket
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: ServiceEntry
@@ -524,8 +524,8 @@ spec:
   - address: unix:///var/run/example/socket
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>For HTTP-based services, it is possible to create a <code>VirtualService</code>
 backed by multiple DNS addressable endpoints. In such a scenario, the
@@ -535,8 +535,8 @@ example, the following configuration creates a non-existent external
 service called foo.bar.com backed by three domains: us.foo.bar.com:8080,
 uk.foo.bar.com:9080, and in.foo.bar.com:7080</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
@@ -563,9 +563,9 @@ spec:
       https: 7080
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: ServiceEntry
@@ -592,8 +592,8 @@ spec:
       https: 7080
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <p>With <code>HTTP_PROXY=http://localhost/</code>, calls from the application to
 <code>http://foo.bar.com</code> will be load balanced across the three domains
@@ -604,8 +604,8 @@ be translated to <code>http://uk.foo.bar.com/baz</code>.</p>
 containing a subject alternate name
 whose format conforms to the <a href="https://github.com/spiffe/spiffe/blob/master/standards/SPIFFE-ID.md">SPIFFE standard</a>:</p>
 
-<p>{{<tabset category-name="example">}}
-{{<tab name="v1alpha3" category-value="v1alpha3">}}</p>
+<p>&lbrace;&lbrace;<tabset category-name="example">}}
+&lbrace;&lbrace;<tab name="v1alpha3" category-value="v1alpha3">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
@@ -628,9 +628,9 @@ spec:
   - &quot;spiffe://cluster.local/ns/httpbin-ns/sa/httpbin-service-account&quot;
 </code></pre>
 
-<p>{{</tab>}}</p>
+<p>&lbrace;&lbrace;</tab>}}</p>
 
-<p>{{<tab name="v1beta1" category-value="v1beta1">}}</p>
+<p>&lbrace;&lbrace;<tab name="v1beta1" category-value="v1beta1">}}</p>
 
 <pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
 kind: ServiceEntry
@@ -653,8 +653,8 @@ spec:
   - &quot;spiffe://cluster.local/ns/httpbin-ns/sa/httpbin-service-account&quot;
 </code></pre>
 
-<p>{{</tab>}}
-{{</tabset>}}</p>
+<p>&lbrace;&lbrace;</tab>}}
+&lbrace;&lbrace;</tabset>}}</p>
 
 <h2 id="ServiceEntry">ServiceEntry</h2>
 <section>

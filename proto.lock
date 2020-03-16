@@ -36595,6 +36595,11 @@
                 "id": 23,
                 "name": "envoy_metrics_service",
                 "type": "RemoteService"
+              },
+              {
+                "id": 26,
+                "name": "status_port",
+                "type": "int32"
               }
             ],
             "maps": [
@@ -41062,6 +41067,58 @@
         ],
         "package": {
           "name": "istio.networking.v1alpha3"
+        },
+        "options": [
+          {
+            "name": "go_package",
+            "value": "istio.io/api/networking/v1alpha3"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "networking:/:v1alpha3:/:yx_adapter.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "KafkaConfig",
+            "fields": [
+              {
+                "id": 1,
+                "name": "brokers",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "topic",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "YXAdapter",
+            "fields": [
+              {
+                "id": 1,
+                "name": "sample_percent",
+                "type": "istio.policy.v1beta1.FractionalPercent"
+              },
+              {
+                "id": 2,
+                "name": "kafka_tracer",
+                "type": "KafkaConfig"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "policy/v1beta1/cfg.proto"
+          }
+        ],
+        "package": {
+          "name": "networking.v1alpha3"
         },
         "options": [
           {
